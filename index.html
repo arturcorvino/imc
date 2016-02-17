@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="theme-color" content="#4338D5">
+
+        <!-- META SEO -->
+        <meta name="robots" content="index,follow">
+        <meta name="description" content="Calcule seu IMC online e veja se seu peso está dentro dos padrões ideais de saúde.">
+        <meta name="keywords" content="imc, calcular imc, calculo imc, indice de massa corporal, calcular indice de massa corporal, calculo indice de massa corporal"> 
+        <meta name="author" content="Artur F. C. Rosa"> 
+
+        <title>Cálculo de IMC</title>
+
+        <!-- PLUGINS -->
+        <link href="plugins/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- CUSTOM -->
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 id="title-1">Calcule o seu</h3>
+                    <h1 id="title-2">IMC</h1>
+                    <div class="avatar-2">
+                        <img src="img/icon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="form-questions">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="imc-form" class="imc-form" autocomplete="off" action="javascript:;" method="post">
+                        <div class="imc-form-inner">
+                            <ol class="questions">
+                                <li>
+                                    <span><label for="imc-weight">Qual seu peso?</label></span>
+                                    <input id="imc-weight" name="imc-weight" type="text" class="mask-weight" required/>
+                                </li>
+                                <li>
+                                    <span><label for="imc-height">Qual sua altura?</label></span>
+                                    <input id="imc-height" name="imc-height" type="text" class="mask-height" required/>
+                                </li>
+                                <li>
+                                    <span><label for="imc-oldyea">Qual sua idade?</label></span>
+                                    <input id="imc-oldyea" name="imc-oldyea" type="text" class="mask-oldyear" required/>
+                                </li>
+                            </ol>
+                            <span id="next"><i class="fa fa-arrow-right"></i></span>
+                        </div>
+                        <div class="progress">
+                            <div class="line"></div>
+                        </div>
+                        <div class="status">
+                            <span class="form-error"></span>
+                            <span class="current-question">0</span>
+                        </div>
+                        <div class="avatar">
+                            <img src="img/icon.png">         
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="return-message">
+            <div class="return-text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="result-imc-text"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br class="clear-both"/>
+
+            <div class="container container-table">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:;" class="btn-table">Confira a tabela de classificação</a>
+                    </div>
+                </div>
+                <br class="clear-both"/>
+                <div class="row tables-content">
+                    <div class="col-md-4 table-class">
+                        <h5>Crianças e Jovens <small>(até 20 anos)</small></h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="clm-0">CLASSIFICAÇÃO</th>
+                                    <th class="clm-1">IMC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="clm-0">Baixo peso</td>
+                                    <td class="clm-1"> &lt; 18,5 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Eutrofia (peso ideal)</td>
+                                    <td class="clm-1"> 18,5 a 24,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Excesso de peso</td>
+                                    <td class="clm-1"> 25 a 29,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Obesidade</td>
+                                    <td class="clm-1"> &gt; 30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4 table-class">
+                        <h5>Adultos <small>(entre 21 e 65)</small></h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="clm-0">CLASSIFICAÇÃO</th>
+                                    <th class="clm-1">IMC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="clm-0">Baixo peso</td>
+                                    <td class="clm-1"> &lt; 18,5 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Eutrofia (peso ideal)</td>
+                                    <td class="clm-1"> 18,5 a 24,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Pré-obesidade</td>
+                                    <td class="clm-1"> 25 a 29,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Pré-obesidade</td>
+                                    <td class="clm-1"> 25 a 29,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Obesidade grau I</td>
+                                    <td class="clm-1"> 30 a 34,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Obesidade grau II</td>
+                                    <td class="clm-1"> 35 a 39,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Obesidade mórbida</td>
+                                    <td class="clm-1"> &gt;= 40 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4 table-class">
+                        <h5>Idosos <small>(a partir de 66 anos)</small></h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="clm-0">CLASSIFICAÇÃO</th>
+                                    <th class="clm-1">IMC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="clm-0">Baixo peso</td>
+                                    <td class="clm-1"> &lt; 22 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Risco de desnutrição</td>
+                                    <td class="clm-1"> 22 a 23,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Eutrofia (peso ideal)</td>
+                                    <td class="clm-1"> 24 a 26,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Excesso de peso</td>
+                                    <td class="clm-1"> 27 a 32,9 </td>
+                                </tr>
+                                <tr>
+                                    <td class="clm-0">Obesidade</td>
+                                    <td class="clm-1"> &gt; 32</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLUGINS -->
+        <script src="plugins/jquery-2.2.0/jquery-2.2.0.min.js"></script>
+        <script src="plugins/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+        <script src="plugins/jquery.mask-1.13.4/jquery.maskMoney.js"></script>
+        <script src="plugins/jquery.validate-1.13.1/jquery.validate.min.js"></script>
+
+        <!-- CUSTOM -->
+        <script src="js/application.js"></script>
+
+        <script>
+            jQuery(document).ready(function() {
+                Application.init(); // init Application
+            });
+        </script>
+
+    </body>
+</html>

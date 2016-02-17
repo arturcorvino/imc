@@ -1,0 +1,368 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  background: #4338D5;
+  font-family: 'Lato', sans-serif;
+  padding: 60px 0 0 0;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+}
+
+label {
+  color: #FFF;
+  font-size: 16px;
+  margin-bottom: 0px;
+  letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #FFF;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 136px;
+}
+
+h3 {
+  font-size: 44px;
+}
+
+h4 {    
+  font-size: 32px;
+}
+
+#return-message {
+  display: none;
+}
+
+.clear-both { 
+  clear: both; 
+}
+
+.imc-form {
+  padding: 5em 5px;
+  margin: 0 auto;
+  max-width: 600px;
+  color: #183e55; 
+}
+
+.imc-form .imc-form-inner {
+  overflow: hidden;
+  position: relative; 
+}
+
+.imc-form .imc-form-inner .questions li {
+  padding: 0;
+  position: relative;
+  /*visibility: hidden;*/
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  height: 0; 
+}
+
+.imc-form .imc-form-inner .questions li span label {
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  .imc-form .imc-form-inner .questions li span label {
+    font-size: 16px;
+  }
+}
+
+.imc-form .imc-form-inner .questions .current {
+  visibility: visible;
+  opacity: 1;
+  height: auto; 
+}
+
+.imc-form .imc-form-inner .questions input {
+  width: 100%;
+  padding: 18px 20px 15px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 0;
+  color: #FFF;
+  background: #3029A0;
+  outline: none; 
+}
+
+.imc-form .imc-form-inner .questions input::-webkit-input-placeholder {
+  color: #8ab0c6; 
+}
+
+.imc-form .imc-form-inner .hide {
+  opacity: 0;
+}
+
+.imc-form .imc-form-inner button[type='submit'] {
+  display: none;
+}
+
+.imc-form .imc-form-inner #next {
+  position: absolute;
+  font-size: 24px;
+  font-size: 1.5rem;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  color: #FFF;
+}
+
+@media only screen and (min-width: 768px) {
+  .imc-form .imc-form-inner #next {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+
+.imc-form .imc-form-inner .complete {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+.imc-form .imc-form-inner .complete .faketext {
+  font-size: 24px;
+  font-size: 1.5rem;
+  opacity: 0;
+  /*visibility: none;*/
+}
+
+.imc-form .imc-form-inner .complete .done {
+  width: 100%;
+  padding: 18px 20px 18px 20px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: 0;
+  color: #183e55;
+  background: #cddce5;
+}
+
+@media only screen and (min-width: 768px) {
+  .imc-form .imc-form-inner .complete .done {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .imc-form .imc-form-inner .complete .done {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+
+.imc-form .imc-form-inner .complete #reset {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: 0;
+  padding: 13px 20px 13px 20px;
+  color: #cddce5;
+  background: #183e55;
+}
+
+@media only screen and (min-width: 768px) {
+  .imc-form .imc-form-inner .complete #reset {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+
+.imc-form .imc-form-inner .complete #reset i {
+  margin-left: 10px;
+}
+
+.imc-form .status {
+  padding-top: 5px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.imc-form .status:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (min-width: 768px) {
+  .imc-form .status {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+.imc-form .status .form-error {
+  float: left;
+}
+
+.imc-form .status .current-question {
+  float: right;
+}
+
+.imc-form .progress {
+  width: 100%;
+  height: 5px;
+  background: #4439D6;
+  position: relative;
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.imc-form .line {
+  transition: all 0.3s ease;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  width: 0%;
+  background: #6B61F8;
+}
+
+.form-error > label, .current-question {
+  font-size: 12px;
+  color: #FFF;
+}
+
+.avatar {
+  text-align: right;
+  position: relative;
+  left: 25px;
+  top: -325px;
+}
+
+@media only screen and (max-width: 768px) {
+  .avatar {
+    top: -188px;
+    left: 0px;
+    position: relative;
+  }
+
+  .avatar img {
+    width: 73px;
+  }
+}
+
+.avatar-2 {
+  display: none;
+  left: 13px;
+  position: absolute;
+  top: 192px;
+}
+
+.avatar-2 img {
+  width: 73px;
+}
+
+@media only screen and (min-width: 1170px) {
+  .avatar-2 {
+    left: 212px;
+    position: absolute;
+    text-align: left;
+    display: none;
+    top: 1px;
+  }
+
+  .avatar-2 img {
+    width: 100%;
+  }
+}
+
+.btn-table {
+  padding: 20px;
+  background-color: #00D9FC;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.btn-table:hover {
+  text-decoration: none;
+}
+
+.table-class {
+  margin-bottom: 25px;
+}
+
+.table-class > h5 {
+  text-align: left;
+  font-size: 20px;
+}
+
+.table-class > h5 > small {
+  color: #FFF;
+}
+
+.table-class > table {
+  width: 100%;
+  margin-top: 5px;
+  background-color: #2F26B0;
+}
+
+.table-class > table tbody tr td, .table-class > table thead tr th {
+  padding: 15px;
+  color: #E7E6F3;
+}
+
+.clm-0 {
+  text-align: left;
+}
+
+.clm-1 {
+  text-align: center;
+  border-left: 1px solid #4439D6;
+}
+
+.table-class > table tbody tr:nth-child(2n+1) {
+  background: #1C1596;
+}
+
+.return-text {
+  background-color: #2E25AF;
+  padding: 20px 0;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #FFF;
+}
+
+@media only screen and (max-width: 768px) {
+  .return-text {
+    background-color: #2E25AF;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    margin-top: 86px;
+    text-align: center;
+    color: #FFF;
+  }
+}
+
+.container-table {
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.tables-content {
+  margin-top: 50px;
+  display: none;
+}
